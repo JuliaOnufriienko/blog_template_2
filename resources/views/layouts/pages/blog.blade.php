@@ -38,14 +38,14 @@
             <h2 class="heading text-2xl sm:text-3xl md:text-4xl tracking-tight">
                 {{$heading}}
             </h2>
-            <x-kit-link :options="$link" class="font-bold text-sm sm:text-base btnmain h-9.25 md:h-12.5 center px-5 sm:px-11.75 rounded-sm sm:rounded-lg animation">
+            <x-kit-link :options="$link" class="font-bold text-sm sm:text-base btnmain h-9.25 md:h-12.5 center px-5 sm:px-11.75 rounded-md sm:rounded-lg animation">
             </x-kit-link>
         </div>
         <ul class="flex flex-wrap justify-center items-start max-xs:px-4 gap-7">
             @foreach($popular_posts as $post)
                 @if (!empty($post->name) && $post['id'] !== $page['id'])
                     <li class="w-full sm:w-[48%] md:w-[30.3%] group flex flex-col justify-between">
-                        <x-kit-link :options="$post->url" class="aspect-[1.11] rounded-md sm:rounded-2xl overflow-hidden mb-7 ">
+                        <x-kit-link :options="$post->url" class="aspect-[1.11] rounded-md sm:rounded-xl overflow-hidden mb-7 ">
                             <x-kit-image :options="$post->image" class="imgcard animation"/>
                         </x-kit-link>
                         <div class="flex items-center gap-2 text-xs mb-3.5">

@@ -42,7 +42,7 @@
     </div>
     <ul class="grid lg:grid-cols-3 gap-4 justify-between">
         @foreach ($steps as $step)
-            <li class="bg-surface-raised hover:bg-main flex-1 flex flex-col items-stretch hover:text-text-accent rounded-2xl p-4 sm:p-6 group animation">
+            <li class="bg-surface-raised hover:bg-main flex-1 flex flex-col items-stretch hover:text-text-accent rounded-xl p-4 sm:p-6 group animation">
                 <p class="font-heading font-bold text-5xl sm:text-6xl md:text-7xl mb-2 opacity-12 group-hover:opacity-100 group-hover:text-text-accent animation">
                     {{$step['index']}}
                 </p>

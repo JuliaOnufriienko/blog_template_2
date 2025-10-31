@@ -16,9 +16,9 @@
         </h2>
         <form class="center gap-x-1 flex-col sm:flex-row gap-2 mb-6">
             <label for="submit" class="hidden"></label>
-            <input id="submit" type="email" class="text-text-heading bg-surface-raised max-sm:text-sm rounded-sm sm:rounded-lg w-full sm:w-80 h-9.25 sm:h-14 px-3 outline-none focus:ring-1 ring-main"
+            <input id="submit" type="email" class="text-text-heading bg-surface-raised max-sm:text-sm rounded-md sm:rounded-lg w-full sm:w-80 h-9.25 sm:h-14 px-3 outline-none focus:ring-1 ring-main"
             placeholder="{{$input_text}}">
-            <button aria-label="{{$button_text}}" type="submit" class="text-sm sm:text-lg text-nowrap font-bold center h-9.5 sm:h-14 max-sm:w-full px-8.5 border border-surface-raised rounded-sm sm:rounded-lg hover:bg-surface-raised hover:text-main animation">
+            <button aria-label="{{$button_text}}" type="submit" class="text-sm sm:text-lg text-nowrap font-bold center h-9.5 sm:h-14 max-sm:w-full px-8.5 border border-surface-raised rounded-md sm:rounded-lg hover:bg-surface-raised hover:text-main animation">
                 {{$button_text}}
             </button>
         </form>

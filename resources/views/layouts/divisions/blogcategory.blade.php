@@ -25,7 +25,7 @@
         <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-8 md:gap-y-13">
             @foreach ($random_posts as $post)
                 <li class="group h-full flex flex-col justify-between">
-                    <x-kit-link :options="$post->url" class="aspect-[1.11] rounded-md sm:rounded-2xl overflow-hidden mb-7 ">
+                    <x-kit-link :options="$post->url" class="aspect-[1.11] rounded-lg sm:rounded-xl overflow-hidden mb-7 ">
                         <x-kit-image :options="$post->image" class="imgcard animation"/>
                     </x-kit-link>
                     <div class="flex items-center gap-2 text-xs mb-3.5">

@@ -95,7 +95,7 @@
                 </label>
                 <textarea id="message" rows="5" class="border border-border font-normal rounded-lg p-3 outline-none focus:ring-1 ring-main"></textarea>
             </div>
-            <button type="submit" aria-label="{{$form_button_text}}" class="mx-auto btnmain w-max rounded-sm h-15 px-9 animation">
+            <button type="submit" aria-label="{{$form_button_text}}" class="mx-auto btnmain w-max rounded-md h-15 px-9 animation">
                 {{$form_button_text}}
             </button>
         </form>
