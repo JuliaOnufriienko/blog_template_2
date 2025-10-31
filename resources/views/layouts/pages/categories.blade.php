@@ -1,4 +1,4 @@
-@name('divisions/blogs_categories')
+@name('pages/categories')
 @schema([
     'pre_heading: text',
     'heading: text',
@@ -6,6 +6,7 @@
     'random_posts: random_items',
     'link_card_text: text',
 ])
+
 <section x-data="blogs" class="my-10 sm:my-17 md:mt-19 md:mb-32.5">
     <div class="container mx-auto px-5">
         <div class="text-center flex flex-col sm:gap-y-6 mb-10 md:mb-15 lg:mb-35 w-full mx-auto max-w-200">
@@ -20,7 +21,7 @@
             <p class="max-sm:text-xs text-text-heading">
                 {{-- our blogs are written from very research research and well known writers writers so that  we can provide you the best blogs and articles articles for you to read them all along --}}
                 {{$description}}
-            </p>
+            </p>jxmnj
         </div>
         <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-8 md:gap-y-13">
             @foreach ($random_posts as $post)
