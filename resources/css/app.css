@@ -1,0 +1,191 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+:root {
+  --main: #4E7CE4;
+  --border: #666;
+  --text-accent: #fff;
+  --text-normal: #666666     ;
+  --text-heading: #333333;
+  --text-quiet: #999;
+  --dialog-backdrop: #000000;
+  --surface-raised: #fff;
+  --surface-default: #FAFAFA;
+
+  --container-size: 80rem;
+  --container-spacing: 1.4375rem;
+}
+
+@theme {
+
+    --font-*: initial;
+    --font-heading: "Montserrat", serif;
+    --font-main: "Roboto", "sans-serif";
+
+    --color-*: initial;
+    --color-main: var(--main);
+    --color-border: var(--border);
+    --color-text-accent: var(--text-accent);
+    --color-text-normal: var(--text-normal);
+    --color-text-heading: var(--text-heading);
+    --color-text-quiet: var(--text-quiet);
+    --color-dialog-backdrop: var(--dialog-backdrop);
+    --color-surface-raised: var(--surface-raised);
+    --color-surface-default: var(--surface-default);
+
+    --animate-*: initial;
+}
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+		scrollbar-color: var(--color-main) var(--color-surface-default);
+		scrollbar-width: thin;
+	}
+	body {
+		@apply font-main font-normal text-text-normal min-h-dvh flex flex-col bg-surface-default;
+	}
+
+	main {
+		@apply grow shrink basis-auto overflow-x-hidden;
+	}
+
+	sup {
+		@apply text-[.75em] leading-0 align-baseline;
+	}
+
+	address {
+		@apply not-italic;
+	}
+
+    button {
+        @apply cursor-pointer
+    }
+	* {
+		@apply selection:text-text-accent selection:bg-main;
+	}
+}
+@layer utilities {
+
+    .center {
+        @apply flex justify-center items-center;
+    }
+    .animation {
+        @apply transition-all ease-in-out duration-500;
+    }
+    .heading {
+        @apply font-heading text-text-heading font-bold;
+    }
+    .btnmain {
+        @apply bg-main text-text-accent border hover:text-main border-main hover:shadow-lg hover:bg-surface-raised;
+    }
+    .link {
+        @apply text-base sm:text-lg font-bold text-main underline group-hover:no-underline hover:text-text-heading;
+    }
+    .imgcard {
+        @apply size-full object-cover grayscale-35 group-hover:scale-105 group-hover:grayscale-0;
+    }
+    .between {
+        @apply flex justify-between items-center;
+    }
+}
+@layer typography {
+	.prose {
+		@apply font-main text-xs sm:text-base text-text-normal max-w-none;
+	}
+
+	.prose :is(h2, h3) {
+		@apply font-bold text-left font-heading text-text-heading mt-[1.3em] mb-[.5em];
+	}
+
+	.prose h2 {
+		@apply text-xl xl:text-2xl;
+	}
+
+	.prose h3 {
+		@apply text-lg xl:text-xl;
+	}
+
+	.prose :is(ol, ul, p) {
+		@apply my-[0.7em] sm:my-[1.28em];
+	}
+
+    .prose ol {
+        @apply list-decimal ml-4;
+    }
+
+    .prose ul {
+        @apply list-disc ml-4;
+    }
+
+	.prose :is(li, p, blockquote) {
+		@apply text-justify;
+	}
+
+	.prose li::marker {
+		@apply text-text-heading;
+	}
+
+	.prose strong {
+		@apply font-medium text-text-heading;
+	}
+
+	.prose a {
+		@apply no-underline text-main transition-all hover:underline;
+	}
+
+	.prose blockquote {
+		@apply italic font-heading bg-main/5 text-text-normal leading-[1.67] text-sm sm:text-xl md:mx-12 px-2 md:px-5 inline-block border-l-2 sm:border-l-4 border-main ;
+	}
+
+	.prose img {
+		@apply mx-auto rounded-xl md:rounded-2xl
+	}
+
+    .prose code {
+        @apply bg-main/10 p-4 my-2 flex;
+    }
+}
+
+
+/* Базовые стили модалки */
+.modal-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    overflow-y: auto;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 300ms ease-out;
+}
+
+.modal-overlay[x-cloak],
+.modal-overlay[style*="display: none"] {
+    opacity: 0;
+}
+
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1.5rem 1rem;
+}
+
+.modal-content[x-cloak],
+.modal-content[style*="display: none"] {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+[x-cloak] {
+    display: none !important;
+}
