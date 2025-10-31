@@ -30,9 +30,9 @@
                         <p class="font-bold text-sm text-text-heading uppercase">
                             {{$post->parent->name}}
                         </p>
-                        <data :datetime="card.datetime" class="text-text-quiet font-medium">
+                        <time datatime="$post->updated_at->format('m.d.Y')" class="text-text-quiet font-medium">
                             {{ $post->updated_at->format('m.d.Y') }}
-                        </data>
+                        </time>
                     </div>
                     <h3 class="heading text-xl lg:text-2xl leading-[1.33] mb-3.5 hover:text-main animation">
                         <x-kit-link :options="$post->url" class="">

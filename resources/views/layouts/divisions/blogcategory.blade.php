@@ -10,15 +10,12 @@
     <div class="container mx-auto px-5">
         <div class="text-center flex flex-col sm:gap-y-6 mb-10 md:mb-15 lg:mb-35 w-full mx-auto max-w-200">
             <p class="max-sm:text-xs max-sm:mb-3 heading uppercase tracking-widest">
-                {{-- OUR BLOGS --}}
                 {{$pre_heading}}
             </p>
             <h1 class="heading text-2xl sm:text-4xl md:text-5xl leading-[1.33] max-sm:mb-5.5">
                 {{$heading}}
-                {{-- Find our all blogs from here --}}
             </h1>
             <p class="max-sm:text-xs text-text-heading">
-                {{-- our blogs are written from very research research and well known writers writers so that  we can provide you the best blogs and articles articles for you to read them all along --}}
                 {{$description}}
             </p>
         </div>
@@ -32,14 +29,14 @@
                         <p" class="font-bold text-xs text-text-heading uppercase">
                             {{$post->parent->name}}
                         </p>
-                        <data :datetime="card.datetime" class="text-text-quiet font-medium">
+                        <time :datetime="card.datetime" class="text-text-quiet font-medium">
                             {{ $post->updated_at->format('m.d.Y') }}
-                        </data>
+                        </time>
                     </div>
                     <h3 class="heading text-lg sm:text-2xl leading-[1.33] mb-3.5">
                         {{$post->title}}
                     </h3>
-                    <p x-text="card.text" class="max-sm:text-xs mb-4.75 line-clamp-3">
+                    <p class="max-sm:text-xs mb-4.75 line-clamp-3">
                         {{$post->summary}}
                     </p>
                     <x-kit-link :options="$post->url" class="link animation mt-auto">
