@@ -1,7 +1,7 @@
 @name('blogs_with_main blog')
 @schema([
-    // 'latest_posts: latest_items',
-    // 'button_text: text',
+    'latest_posts: latest_items',
+    'button_text: text',
 ])
 <section class="my-7 sm:my-12">
     <div class="container">
@@ -46,7 +46,7 @@
                         </div>
                         <div class="flex items-center gap-2 text-sm mb-3.5">
                             <p x-text="card.category" class="font-bold text-sm text-text-heading uppercase">
-                                {{$post->parent->name}}
+                                {{-- {{$post->parent->name}} --}}
                             </p>
                             <time datetime="card.datetime" class="text-text-quiet font-medium">
 
@@ -75,7 +75,7 @@
     {{-- Главная большая карточка --}}
 
         @php
-            $mainPost = $posts[0]; // первая статья
+            $mainPost = $latest_posts:[0];
         @endphp
 
         <article class="recent-posts__main">
